@@ -121,9 +121,13 @@
                     <p>Autor publicado en Amazon</p>
                     <p>Sitio web: <a class="link-button" href="https://itamar74ia.github.io/ITA_Web/" target="_blank" rel="noreferrer">https://itamar74ia.github.io/ITA_Web/</a></p>
                     <p>Repositorio: <a class="link-button" href="https://github.com/ITAMAR74IA/ITA_Web" target="_blank" rel="noreferrer">https://github.com/ITAMAR74IA/ITA_Web</a></p>
-                    <p><a href="assets/CV_Joffre_Arias_IA_Software.pdf" download class="btn">Descargar PDF</a></p>
+                    <p class="cv-actions">
+                        <a href="assets/CV_Joffre_Arias_IA_Software.pdf" target="_blank" class="btn btn-secondary">Ver CV completo</a>
+                        <a href="assets/CV_Joffre_Arias_IA_Software.pdf" download class="btn">Descargar CV</a>
+                    </p>
+                    <p style="margin-top:8px;"><button id="cv-toggle" class="btn btn-secondary">Mostrar más</button></p>
                 </div>
-                <div class="cv-body">
+                <div class="cv-body cv-full" aria-hidden="true" style="display:none;">
                     <h3>Perfil Profesional</h3>
                     <p>Ingeniero en Ciencias de la Computación con más de 15 años de experiencia en entornos empresariales, especializado en análisis de sistemas, desarrollo de software, bases de datos y automatización de procesos.</p>
                     <p>Durante mi trayectoria profesional evolucioné desde funciones técnicas hasta asumir la responsabilidad independiente del área informática de una empresa, desarrollando soluciones tecnológicas internas, administrando información empresarial y creando herramientas digitales adaptadas a las necesidades del negocio.</p>
@@ -375,6 +379,25 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('loaded');
+
+            const cvToggle = document.getElementById('cv-toggle');
+            const cvFull = document.querySelector('.cv-full');
+            if (cvToggle && cvFull) {
+                cvToggle.addEventListener('click', () => {
+                    const isHidden = cvFull.style.display === 'none' || cvFull.getAttribute('aria-hidden') === 'true';
+                    if (isHidden) {
+                        cvFull.style.display = '';
+                        cvFull.setAttribute('aria-hidden', 'false');
+                        cvToggle.textContent = 'Mostrar menos';
+                        // smooth scroll to the expanded content on mobile
+                        setTimeout(() => cvFull.scrollIntoView({behavior: 'smooth', block: 'start'}), 150);
+                    } else {
+                        cvFull.style.display = 'none';
+                        cvFull.setAttribute('aria-hidden', 'true');
+                        cvToggle.textContent = 'Mostrar más';
+                    }
+                });
+            }
         });
     </script>
 </body>

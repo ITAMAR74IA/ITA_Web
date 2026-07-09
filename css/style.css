@@ -397,6 +397,51 @@ button,
     margin-top: 38px;
 }
 
+/* Curriculum Vitae grid and actions */
+.cv-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 26px;
+    align-items: start;
+    max-width: 1120px;
+    margin: 0 auto 20px;
+}
+
+.cv-contact p {
+    margin: 8px 0;
+}
+
+.cv-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.cv-full {
+    transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+@media (max-width: 900px) {
+    .cv-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 12px;
+    }
+
+    .cv-contact {
+        text-align: center;
+    }
+
+    .cv-actions {
+        justify-content: center;
+    }
+
+    .cv-body {
+        padding: 12px 8px;
+        font-size: 0.98rem;
+    }
+}
+
 .about-summary {
     padding: 32px;
     border-radius: 28px;
