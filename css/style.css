@@ -348,6 +348,71 @@ button,
     }
 }
 
+/* Compact mobile adjustments */
+@media (max-width: 680px) {
+    header.hero {
+        padding: 48px 14px 36px;
+    }
+
+    .hero-content {
+        padding: 28px 18px;
+        border-radius: 18px;
+    }
+
+    .hero h1 {
+        font-size: 1.9rem;
+        line-height: 1.08;
+    }
+
+    .hero h2 {
+        font-size: 1.05rem;
+    }
+
+    .hero-description {
+        font-size: 0.98rem;
+        margin-bottom: 18px;
+    }
+
+    .hero-buttons .btn,
+    .hero-buttons .btn-secondary,
+    button,
+    .btn,
+    .btn-secondary {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        border-radius: 999px;
+    }
+
+    .hero-highlights {
+        display: none;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .about,
+    .services,
+    .projects,
+    .testimonials,
+    .skills,
+    .book,
+    .contact {
+        padding: 48px 14px;
+    }
+
+    .cv-contact p { font-size: 0.95rem; }
+}
+
+/* Extra small screens: compact even more */
+@media (max-width: 420px) {
+    .hero h1 { font-size: 1.6rem; }
+    .hero h2 { font-size: 0.98rem; }
+    .portrait-summary { padding: 12px; }
+    .profile-portrait { width: 180px; }
+    .profile-portrait img { width: 180px; height: 180px; }
+}
+
 .portrait-summary {
     padding: 34px 32px;
     border-radius: 28px;
